@@ -1,0 +1,14 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    password: tkemkqgtmlclzihd
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            trust: smtp.gmail.com
+          starttls:
+            enable: true
+    username: matteotartaglione1@gmail.com
