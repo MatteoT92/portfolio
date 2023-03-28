@@ -6,25 +6,25 @@ class Contacts extends React.Component {
 
     sendMessage = (e) => {
         e.preventDefault();
+
         const form = e.target;
 
-        fetch('http://localhost:8080/api/contacts', {
+        fetch('/api/contacts', { // effettua una chiamata POST all'endpoint indicato
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'
             },
-            body: JSON.stringify({
-                category: form.category,
-                name: form.name.value,
-                email: form.email.value,
-                message: form.message.value
+            body: JSON.stringify({ // converte i seguenti campi del form in un oggetto JSON e li invia al server
+                category: form.elements.category.value,
+                name: form.elements.name.value,
+                email: form.elements.email.value,
+                message: form.elements.message.value
             })
-        }).then(res => res.json())
-        .then(data => {
-            console.log(data);
-            alert(data.message);
-        });
-        form.reset();
+        }).then(res => res.json()); // converte il risultato della chiamata in un oggetto JSON
+
+        alert('Messaggio inviato con successo! Riceverai una risposta a breve.');
+
+        form.reset(); // resetta i campi del form
     }
 
     render() {
@@ -48,8 +48,8 @@ class Contacts extends React.Component {
                             <label htmlFor="message">Messaggio: </label><br/>
                             <textarea id="message" name="message" rows="5" cols="50"></textarea><br/>
                             <div className="buttons">
-                                <button type="submit" class="btn send">Invia</button>
-                                <button type="reset" class="btn abort">Annulla</button>
+                                <button type="submit" className="btn send">Invia</button>
+                                <button type="reset" className="btn abort">Annulla</button>
                             </div>
                         </form>
                     </div>

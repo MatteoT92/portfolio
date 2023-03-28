@@ -7,6 +7,8 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
+import matteot92.portfolio.model.entities.Message;
+
 /**
  * @author Matteo Tartaglione
  */
@@ -23,12 +25,12 @@ public class EmailService {
 		this.emailSender = emailSender;
 	}
 	
-    public void sendEmail(String from, String subject, String text) {
+    public void sendEmail(Message email) {
         SimpleMailMessage message = new SimpleMailMessage(); 
-        message.setFrom(from);
+        message.setFrom(email.getEmail());
         message.setTo(to); 
-        message.setSubject(subject); 
-        message.setText(text);
+        message.setSubject(email.getCategory()); 
+        message.setText(email.getMessage());
         emailSender.send(message);
     }
 	 
