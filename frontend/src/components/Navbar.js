@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Logo from './Logo';
 
 class Navbar extends React.Component {
+
     render() {
         return (
             <nav className='navbar'>
@@ -25,6 +26,7 @@ class Navbar extends React.Component {
             </nav>
         )
     }
+    
 }
 
 export default Navbar;

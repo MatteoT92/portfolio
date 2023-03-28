@@ -62,6 +62,7 @@ class Contacts extends React.Component {
             </div>
         )
     }
+    
 }
 
 export default Contacts;

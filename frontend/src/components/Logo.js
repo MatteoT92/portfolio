@@ -1,6 +1,7 @@
 import React from "react";
 
 class Logo extends React.Component {
+
     render() {
         return (
             <span className="logo">
@@ -9,6 +10,7 @@ class Logo extends React.Component {
             </span>
         );
     }
+    
 }
 
 export default Logo;
