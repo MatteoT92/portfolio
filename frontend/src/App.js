@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import './App.css';
 
 class App extends React.Component {
+
   render() {
     return (
       <BrowserRouter>
@@ -19,6 +20,7 @@ class App extends React.Component {
       </BrowserRouter>  
     )
   }
+  
 }
 
 export default App;
