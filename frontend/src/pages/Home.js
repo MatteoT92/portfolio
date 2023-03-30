@@ -1,4 +1,5 @@
 import React from 'react';
+import ChatBox from '../components/ChatBox';
 import Footer from '../components/Footer';
 
 class Home extends React.Component {
@@ -18,6 +19,7 @@ class Home extends React.Component {
                         <code>/*Sentiti libero di lasciarmi un commento*/</code>
                     </div>
                 </div>
+                <ChatBox />
                 <Footer />
             </div>
         )

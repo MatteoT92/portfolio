@@ -9,19 +9,43 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
+import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
 /*
  * @author Matteo Tartaglione
  */
 @SpringBootApplication
-public class PortfolioApplication {
+@EnableWebSocketMessageBroker
+public class PortfolioApplication implements WebSocketMessageBrokerConfigurer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PortfolioApplication.class, args);
 	}
 	
+	/*
+	 * Configuration of websocket
+	 */
+	@Override
+    public void configureMessageBroker(MessageBrokerRegistry config) {
+        config.enableSimpleBroker("/topic");
+        config.setApplicationDestinationPrefixes("/chat-app");
+    }
+
+    @Override
+    public void registerStompEndpoints(StompEndpointRegistry registry) {
+         registry.addEndpoint("/chat-websocket")
+         .setAllowedOriginPatterns("*")
+         .withSockJS();
+    }
+	
+    /*
+     * Configuration of annotation that give value from application.yml
+     */
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
 	    PropertySourcesPlaceholderConfigurer c = new PropertySourcesPlaceholderConfigurer();

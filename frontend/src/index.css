@@ -30,19 +30,23 @@ code {
 .route > a {
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 
-.logo > img {
+.logo > a {
+  display: inline-flex;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo > a > img {
   margin-right: 1rem;
 }
 
-.logo > h1 {
+.logo > a > h1 {
   margin-right: 45rem;
-}
-
-.logo > img + h1 {
   font-size: 1.5rem;
-  display: inline-flex;
+  color: black;
 }
 
 .footer {
@@ -94,14 +98,18 @@ code strong {
 
 code a {
   color: #78C6FF;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 code a:hover {
   color: #B2E0FF;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .welcome {
-  margin-top: 5%;
+  margin-top: 3%;
   text-align: center;
 }
 
@@ -122,6 +130,7 @@ code a:hover {
   padding-right: 1rem;
   font-weight: bold;
   margin-right: 0.5rem;
+  cursor: pointer;
 }
 
 .buttons {
@@ -160,4 +169,55 @@ code a:hover {
 
 .dashboard {
   margin-top: 1rem;
+}
+
+.chat-container {
+  display: inline;
+}
+
+.chat {
+  width: 300px;
+  height: 100px;
+  background-color: transparent;
+  float: right;
+}
+
+.chat-header {
+  float: right;
+}
+
+.chat-header > button {
+  display: inline-flex;
+  margin-right: 2rem;
+  margin-left: 1rem;
+  margin-top: 5rem;
+  cursor: pointer;
+}
+
+.messages {
+  overflow: auto;
+  width: 300px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+.send-message > form {
+  display: flex;
+}
+
+.send-message > form > input {
+  width: 70%;
+  padding: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.send-message > form > button {
+  width: 20%;
+  margin-top: 0.5rem;
+  padding: 5px;
+  background-color: green;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
 }
