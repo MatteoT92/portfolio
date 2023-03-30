@@ -212,11 +212,21 @@ code a:hover {
   margin-right: 10px;
 }
 
-.send-message > form > button {
+.send-msg-btn {
   width: 20%;
   margin-top: 0.5rem;
   padding: 5px;
   background-color: green;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.disconnect-btn {
+  width: 20%;
+  margin-top: 0.5rem;
+  padding: 5px;
+  background-color: red;
   border-radius: 100%;
   border: none;
   cursor: pointer;

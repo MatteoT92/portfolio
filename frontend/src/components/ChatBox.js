@@ -35,6 +35,10 @@ function ChatRoom() {
   const disconnect = () => {
     if (stompClient != null) { // verifica che l'oggetto WebSocket non sia nullo
       stompClient.disconnect(); // e effettua il logout
+      setShowChat(false); // nasconde la chat
+      setUsername(""); // resetta il campo del nome utente
+      setMessage(""); // resetta il campo del messaggio
+      setMessages([]); // resetta l'array di messaggi
     }
   };
 
@@ -87,8 +91,11 @@ function ChatRoom() {
                 id="msg"
                 placeholder='Scrivi un messaggio'
                 />
-                <button type="submit">
-                    <img src={process.env.PUBLIC_URL + '/send-icon.png'} alt="Send Icon" width="30px"/>
+                <button type="submit" className="send-msg-btn">
+                    <img src={process.env.PUBLIC_URL + '/send-button-icon.png'} alt="Send Icon" width="30px"/>
+                </button>
+                <button onClick={disconnect} className="disconnect-btn">
+                    <img src={process.env.PUBLIC_URL + '/disconnect-button-icon.webp'} alt="Disconnect Icon" width="30px"/>
                 </button>
             </form>
           </div>

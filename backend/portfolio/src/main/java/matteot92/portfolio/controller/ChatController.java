@@ -22,24 +22,20 @@ import matteot92.portfolio.model.entities.ChatMessage;
 public class ChatController {
 
 	/**
-	 * Metodo che consente ad un utente cliente di poter inviare un messaggio
-	 * sul canale topic/chat utilizzando il WebSocket
+	 * Metodo che consente ad un utente di poter inviare un messaggio sul canale topic/chat utilizzando il WebSocket
 	 */
     @MessageMapping("/chat")
     @SendTo("/topic/chat")
     @CrossOrigin(origins = "http://localhost:3000")
     public String send(ChatMessage message) throws Exception {
-        ChatMessage outMessage = new ChatMessage();
-        outMessage.setName(message.getName());
-        outMessage.setMessage(message.getMessage());
-        outMessage.setTime(new SimpleDateFormat("HH:mm dd-MM-yyyy").format(new Date()));
+        message.setTime(new SimpleDateFormat("HH:mm dd-MM-yyyy").format(new Date()));
         // Trasforma l'outMessage di tipo ChatMessage in un oggetto JSON
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         mapper.registerModule(new JavaTimeModule()); // serializza la data con Jackson JSON
         String json = null;
 		try {
-			json = mapper.writeValueAsString(outMessage);
+			json = mapper.writeValueAsString(message);
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
