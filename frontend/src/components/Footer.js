@@ -1,14 +1,12 @@
-import React, {Component} from "react";
+import React from "react";
 
-class Footer extends Component {
+function Footer() {
 
-    render() {
-        return (
-            <footer className="footer">
+    return (
+        <footer className="footer">
             <p>Copyrights – 2023 Dev Matteo Tartaglione. All rights reserved</p>
-            </footer>
-        )
-    }
+        </footer>
+    )
     
 }
 

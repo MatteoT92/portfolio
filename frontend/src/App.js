@@ -1,25 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
 import Navbar from './components/Navbar';
-import './App.css';
 
-class App extends React.Component {
+function App() {
 
-  render() {
+    const [language, setLanguage] = useState('ITA');
+
     return (
       <BrowserRouter>
-        <Navbar />
+        <Navbar language={language} funcLangIta={() => setLanguage(prevValue => 'ITA')} funcLangEng={() => setLanguage(prevValue => 'ENG')} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/" element={<Home language={language} />} />
+          <Route path="/about" element={<About language={language} />} />
+          <Route path="/contacts" element={<Contacts language={language} />} />
         </Routes>
       </BrowserRouter>  
     )
-  }
   
 }
 

@@ -44,7 +44,7 @@ code {
 }
 
 .logo > a > h1 {
-  margin-right: 45rem;
+  margin-right: 36rem;
   font-size: 1.5rem;
   color: black;
 }
@@ -162,7 +162,7 @@ code a:hover {
   background-color: green;
 }
 
-.abort {
+.cancel {
   color: white;
   background-color: red;
 }
@@ -229,5 +229,17 @@ code a:hover {
   background-color: red;
   border-radius: 100%;
   border: none;
+  cursor: pointer;
+}
+
+.flags {
+  display: inline-flex;
+}
+
+.flags > button {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  border: none;
+  background-color: transparent;
   cursor: pointer;
 }
