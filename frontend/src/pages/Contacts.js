@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { SocialIcon } from 'react-social-icons';
 import Footer from '../components/Footer';
 
-class Contacts extends React.Component {
+class Contacts extends Component {
 
     sendMessage = (e) => {
         e.preventDefault();

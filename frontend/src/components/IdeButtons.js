@@ -1,6 +1,6 @@
-import React from "react";
+import React, {Component} from "react";
 
-class IdeButtons extends React.Component {
+class IdeButtons extends Component {
 
     render() {
         return (

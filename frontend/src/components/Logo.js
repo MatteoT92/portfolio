@@ -1,7 +1,7 @@
-import React from "react";
+import React, {Component} from "react";
 import { NavLink } from 'react-router-dom';
 
-class Logo extends React.Component {
+class Logo extends Component {
 
     render() {
         return (

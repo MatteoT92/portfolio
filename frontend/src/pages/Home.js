@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ChatBox from '../components/ChatBox';
 import Footer from '../components/Footer';
 
-class Home extends React.Component {
+class Home extends Component {
 
     render() {
         return (

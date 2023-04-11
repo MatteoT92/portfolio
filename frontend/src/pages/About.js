@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Footer from '../components/Footer';
 import IdeButtons from '../components/IdeButtons';
 
-class About extends React.Component {
+class About extends Component {
 
     render() {
         return (

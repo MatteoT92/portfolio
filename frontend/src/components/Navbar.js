@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from './Logo';
 
-class Navbar extends React.Component {
+class Navbar extends Component {
 
     render() {
         return (
