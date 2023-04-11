@@ -22,6 +22,7 @@ function Home(props) {
                         <code>System.out.println("Welcome to my portfolio page!");</code>
                         <code>System.out.println("My name is Matteo Tartaglione and on this site I will briefly describe who I am and what I do.");</code>
                         <code>console.log("From these lines of code you have surely noticed that I am a programmer?");</code>
+                        <code>Console.WriteLine("If you think my profile is valid and interesting, don't hesitate to contact me!");</code>
                         <code>/*Feel free to leave me a comment*/</code>
                     </div>
                 </div>
