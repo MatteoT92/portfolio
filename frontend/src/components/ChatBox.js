@@ -76,10 +76,15 @@ function ChatBox(props) {
           <div className="chat">
             <div className="messages">
               {messages.map((message, index) => ( // per ogni messaggio nell'array viene creato un div col nome utente e testo
-                <div key={index}>
-                  <span>{message.name}: </span>
+              <div key={index} className="message-chat">
+                  <span>
+                    <strong>{message.name}: </strong>
+                  </span>
                   <span>{message.message}</span>
-                  <span>{message.time}</span>
+                  <div className="time-chat">
+                    <img src={process.env.PUBLIC_URL + '/clock-icon.jpg'} alt="Clock Icon" width="25px"/>
+                    {message.time}
+                  </div>
                 </div>
               ))}
             </div>
@@ -124,10 +129,15 @@ function ChatBox(props) {
           <div className="chat">
             <div className="messages">
               {messages.map((message, index) => ( // per ogni messaggio nell'array viene creato un div col nome utente e testo
-                <div key={index}>
-                  <span>{message.name}: </span>
+                <div key={index} className="message-chat">
+                  <span>
+                    <strong>{message.name}: </strong>
+                  </span>
                   <span>{message.message}</span>
-                  <span>{message.time}</span>
+                  <div className="time-chat">
+                    <img src={process.env.PUBLIC_URL + '/clock-icon.jpg'} alt="Icona Orologio" width="25px"/>
+                    {message.time}
+                  </div>
                 </div>
               ))}
             </div>

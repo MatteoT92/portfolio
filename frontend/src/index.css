@@ -243,3 +243,27 @@ code a:hover {
   background-color: transparent;
   cursor: pointer;
 }
+
+.message-chat {
+  display: inline-block;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.message-chat::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  border-style: solid;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #f1f1f1 transparent transparent;
+  transform: translateY(-50%);
+}
+
+.time-chat {
+  display: flex;
+  align-items: center;
+}
